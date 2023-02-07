@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="2bdff79a-2be0-4f7b-9729-ea74011f5ab8" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../../1. Tongquan/Ung-Dung-Chuyen-Doi-Tien-Te/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../1. Tongquan/Ung-Dung-Chuyen-Doi-Tien-Te/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../1. Tongquan/Ung-Dung-Tu-Dien-Don-Gian/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../1. Tongquan/Ung-Dung-Tu-Dien-Don-Gian/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../1. Tongquan/Ung-Dung-Tu-Dien-Don-Gian/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../1. Tongquan/Ung-Dung-Tu-Dien-Don-Gian/.idea/workspace.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="ProjectId" id="2LM3ZzHvpEEm1PmadkPJZg7FxPP" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "G:/Module4/2. SpringController/Ung-Dung-Quan-Li-Danh-Sach-Khach-Hang/customer-management-spring-overview/customer-management-spring-overview"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2bdff79a-2be0-4f7b-9729-ea74011f5ab8" name="Changes" comment="" />
+      <created>1675667183883</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1675667183883</updated>
+      <workItem from="1675667185379" duration="14000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
