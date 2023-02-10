@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="Ung-Dung-Kiem-Tra-Email-Hop-Le-Maven:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>Ung-Dung-Kiem-Tra-Email-Hop-Le-Maven</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="Ung-Dung-Kiem-Tra-Email-Hop-Le-Maven-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="Ung-Dung-Kiem-Tra-Email-Hop-Le-Maven:war exploded" />
+    </root>
+  </artifact>
+</component>

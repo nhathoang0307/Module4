@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9247b0ed-0518-45dd-bc77-7a51e349bad2" name="Changes" comment="">
+    <list default="true" id="9ba1c84a-5fcb-477b-91f2-2a0347b09f11" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/customer-management-spring-overview/.idea/customer-management-spring-overview.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/customer-management-spring-overview/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/customer-management-spring-overview/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/customer-management-spring-overview/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../1. Tongquan/Ung-Dung-Chuyen-Doi-Tien-Te/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../1. Tongquan/Ung-Dung-Chuyen-Doi-Tien-Te/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../1. Tongquan/Ung-Dung-Tu-Dien-Don-Gian/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../1. Tongquan/Ung-Dung-Tu-Dien-Don-Gian/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../1. Tongquan/Ung-Dung-Tu-Dien-Don-Gian/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../1. Tongquan/Ung-Dung-Tu-Dien-Don-Gian/.idea/workspace.xml" afterDir="false" />
@@ -14,7 +18,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
-  <component name="ProjectId" id="2LM2MgbMc8FwDTPw1GlabC64yVZ" />
+  <component name="ProjectId" id="2LOPYUmcAz6GVqMpSHv1mhepwi8" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -25,18 +29,18 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "G:/Module4/2. SpringController/Ung-Dung-Quan-Li-Danh-Sach-Khach-Hang/customer-management"
+    "last_opened_file_path": "G:/Module4/2. SpringController/Ung-Dung-May-Tinh-Ca-Nhan"
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="9247b0ed-0518-45dd-bc77-7a51e349bad2" name="Changes" comment="" />
-      <created>1675666584565</created>
+      <changelist id="9ba1c84a-5fcb-477b-91f2-2a0347b09f11" name="Changes" comment="" />
+      <created>1675739203408</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1675666584565</updated>
-      <workItem from="1675666586107" duration="21000" />
+      <updated>1675739203408</updated>
+      <workItem from="1675739204851" duration="15000" />
     </task>
     <servers />
   </component>

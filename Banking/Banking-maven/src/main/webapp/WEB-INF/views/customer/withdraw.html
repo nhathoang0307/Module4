@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create customer</title>
+    <link rel="stylesheet" href="/assets/bootstrap/v5.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+<div class="container">
+    <header>
+        <nav class="navbar bg-primary">
+            <div class="container-fluid">
+                <a class="navbar-brand">Withdraw</a>
+                <div class="d-flex">
+                    <a href="/customers">
+                        <button class="btn btn-light">List of customers</button>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="content">
+        <form class="" method="post" th:object="${withdraw}">
+            <div class="row mb-3">
+                <div class="col-lg-6">
+                    <label class="form-label">Full name</label>
+                    <input type="text" class="form-control" th:field="*{customer.fullName}" readonly/>
+                </div>
+                <div class="col-lg-6">
+                    <label class="form-label">Email</label>
+                    <input type="email" class="form-control" th:field="*{customer.email}" readonly/>
+                </div>
+                <div class="col-lg-6">
+                    <label class="form-label">Balance</label>
+                    <input type="text" class="form-control" th:field="*{customer.balance}" readonly/>
+                </div>
+                <div class="col-lg-6">
+                    <label class="form-label">Transaction Amount</label>
+                    <input type="text" class="form-control" th:field="*{transactionAmount}" value="0"/>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="mb-3 col-lg-3">
+                    <button type="submit" class="btn btn-outline-primary">Withdraw</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<th:block th:if="${error == true}">
+    <footer class="container-fluid">
+        <ul class="container">
+            <li th:text="${messages}"></li>
+        </ul>
+    </footer>
+</th:block>
+
+<th:block th:if="${success == true}">
+    <footer class="container-fluid bg-primary">
+        <ul class="container">
+            <li th:text="${messages}"></li>
+        </ul>
+    </footer>
+</th:block>
+</body>
+</html>

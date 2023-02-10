@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Update customer</title>
+    <link rel="stylesheet" href="/assets/bootstrap/v5.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+<div class="container">
+    <header>
+        <nav class="navbar bg-primary">
+            <div class="container-fluid">
+                <a class="navbar-brand">Transfer History</a>
+                <div class="d-flex">
+                    <a href="/customers">
+                        <button class="btn btn-light">List of customers</button>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="content">
+        <table id="tbTransfer" class="table table-hover">
+            <thead>
+            <tr>
+                <th class="text-center">#</th>
+                <th class="text-center">Created At</th>
+                <th class="text-center">Sender ID</th>
+                <th class="text-center">Sender Name</th>
+                <th class="text-center">Recipient ID</th>
+                <th class="text-center">Recipient Name</th>
+                <th class="text-center">Transfer Amount (VNĐ)</th>
+                <th class="text-center">Fees (%)</th>
+                <th class="text-center">Fees Amount (VNĐ)</th>
+            </tr>
+            </thead>
+            <tbody>
+            <th:block th:each="item : ${transfers}">
+            <tr>
+                <td class="text-center" th:text="${item.getId()}"></td>
+                <td class="text-center" th:text="${item.getCreatedAt()}"></td>
+                <td class="text-center" th:text="${item.getSender().getId()}"></td>
+                <td class="text-center" th:text="${item.getSender().getFullName()}"></td>
+                <td class="text-center" th:text="${item.getRecipient().getId()}"></td>
+                <td class="text-center" th:text="${item.getRecipient().getFullName()}"></td>
+                <td class="text-center" th:text="${item.getTransferAmount()}"></td>
+                <td class="text-center" th:text="${item.getFees()}"></td>
+                <td class="text-center" th:text="${item.getFeesAmount()}"></td>
+            </tr>
+            </th:block>
+            </tbody>
+            <tfoot>
+            <tr>
+                <td colspan="8" class="text-end fst-italic font-weight-bold">Total Fees Amount:</td>
+                <td colspan="2" class="text-start font-monospace" style="font-size: 24px">
+                    <span id="sumFeesAmount" th:text="${allFeesAmount}">
+                    </span>
+                </td>
+            </tr>
+            </tfoot>
+        </table>
+    </div>
+</div>
+
+<th:block th:if="${error == true}">
+    <footer class="container-fluid">
+        <ul class="container">
+            <li>Customer not found !</li>
+        </ul>
+    </footer>
+</th:block>
+
+<th:block th:if="${messageSuccess}">
+    <footer class="container-fluid bg-primary">
+        <ul class="container">
+            <li th:text="${messageSuccess}"></li>
+        </ul>
+    </footer>
+</th:block>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>List of customers</title>
+    <link rel="stylesheet" href="/assets/bootstrap/v5.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/fontawesome/v5.15.4/css/all.min.css">
+
+</head>
+<body>
+<div class="container">
+    <header>
+        <nav class="navbar bg-primary">
+            <div class="container-fluid">
+                <a class="navbar-brand">
+                    <i class="fas fa-list"></i> List of customers</a>
+                <div class="d-flex">
+                    <a href="/customers/create" style="padding-right: 10px;">
+                        <button class="btn btn-light">
+                            <i class="fas fa-plus"></i> Create
+                        </button>
+                    </a>
+                    <a href="/transfer">
+                        <button class="btn btn-light">
+                            <i class="fas fa-history"></i> History
+                        </button>
+                    </a>
+                </div>
+
+            </div>
+        </nav>
+    </header>
+
+    <div class="content">
+        <table class="table table-hover">
+            <thead>
+            <tr>
+                <th>#</th>
+                <th>Full name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Balance</th>
+                <th>Address</th>
+                <th>Action</th>
+            </tr>
+            </thead>
+            <tbody>
+            <th:block th:each="item : ${customers}">
+                <tr>
+                    <td th:text="${item.id}"></td>
+                    <td th:text="${item.fullName}"></td>
+                    <td th:text="${item.email}"></td>
+                    <td th:text="${item.phone}"></td>
+                    <td th:text="${item.balance}"></td>
+                    <td th:text="${item.address}"></td>
+                    <td>
+                        <a th:href="@{/customers/update/__${item.id}__}">
+                            <button class="btn btn-outline-secondary">
+                                <i class="far fa-edit"></i>
+                            </button>
+                        </a>
+                        <a th:href="@{/customers/deposit/__${item.id}__}">
+                            <button class="btn btn-outline-secondary">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </a>
+                        <a th:href="@{/customers/withdraw/__${item.id}__}">
+                            <button class="btn btn-outline-secondary">
+                                <i class="fas fa-minus-circle"></i>
+                            </button>
+                        </a>
+                        <a th:href="@{/customers/transfer/__${item.id}__}">
+                            <button class="btn btn-outline-secondary">
+                                <i class="fas fa-exchange-alt"></i>
+                            </button>
+                        </a>
+                        <a th:href="@{/customers/delete/__${item.id}__}">
+                            <button class="btn btn-outline-secondary">
+                                <i class="fas fa-trash-alt"></i>
+                            </button>
+                        </a>
+                    </td>
+                </tr>
+            </th:block>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<th:block th:if="${error == true}">
+    <footer class="container-fluid">
+        <ul class="container">
+            <li>Customer not found !</li>
+        </ul>
+    </footer>
+</th:block>
+
+<th:block th:if="${messageSuccess}">
+    <footer class="container-fluid bg-primary">
+        <ul class="container">
+            <li th:text="${messageSuccess}"></li>
+        </ul>
+    </footer>
+</th:block>
+</body>
+</html>

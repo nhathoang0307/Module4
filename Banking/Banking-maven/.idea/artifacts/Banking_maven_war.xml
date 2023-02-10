@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="Banking-maven:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>Banking-maven</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="c0922-spring-thymeleaf-banking-transaction.war">
+      <element id="artifact" artifact-name="Banking-maven:war exploded" />
+    </root>
+  </artifact>
+</component>
