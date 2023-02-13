@@ -227,9 +227,11 @@ public class CustomerController {
         Optional<Customer> senderOptional = customerService.findById(senderId);
 
         if (!senderOptional.isPresent()) {
-            model.addAttribute("error", true);
+            model.addAttribute("errorSenderID", true);
             model.addAttribute("messages", "Customer not found");
-        } else {
+            return "customer/transfer";
+        }
+        else {
             Customer sender = senderOptional.get();
 
             TransferRequestDTO transferDTO = new TransferRequestDTO();
@@ -240,7 +242,6 @@ public class CustomerController {
             List<Customer> recipients = customerService.findAllByIdNotAndDeletedIsFalse(senderId);
 
             model.addAttribute("recipients", recipients);
-
         }
         return "customer/transfer";
     }
@@ -276,8 +277,8 @@ public class CustomerController {
 
         // ném lỗi không tìm thấy id người gửi
         if (!senderOptional.isPresent()) {
-            model.addAttribute("error", true);
-            model.addAttribute("messages", "Sender balance not enough to transfer");
+            model.addAttribute("errorSenderID", true);
+            model.addAttribute("messages", "Customer not found");
             return "customer/transfer";
         }
 
@@ -285,12 +286,12 @@ public class CustomerController {
         Long recipientId = transferRequestDTO.getRecipient().getId();
         Optional<Customer> recipientOptional = customerService.findById(recipientId);
         if (!recipientOptional.isPresent()) {
-            model.addAttribute("error", true);
+            model.addAttribute("errorControl", true);
             model.addAttribute("messages", "Recipient not valid");
             return "customer/transfer";
         }
         if (customerSenderId.equals(recipientId)) {
-            model.addAttribute("error", true);
+            model.addAttribute("errorControl", true);
             model.addAttribute("messages", "Sender ID must be different from Recipient ID");
             return "customer/transfer";
         }
@@ -316,7 +317,7 @@ public class CustomerController {
         BigDecimal transactionAmount = transferAmount.add(feesAmount);
 
         if (senderCurrentBalance.compareTo(transactionAmount) < 0) {
-            model.addAttribute("error", true);
+            model.addAttribute("errorControl", true);
             model.addAttribute("messages", "Sender balance not enough to transfer");
             return "customer/transfer";
         }

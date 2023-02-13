@@ -1,0 +1,166 @@
+{
+  "customers": [
+    {
+      "id": 1,
+      "fullName": "NVA",
+      "email": "nva@abc.vn",
+      "phone": 523525,
+      "address": "VN",
+      "balance": 995,
+      "deleted": 0
+    },
+    {
+      "fullName": "NVDd",
+      "email": "nvD@abc.vn",
+      "phone": "12345",
+      "address": "VN",
+      "balance": 0,
+      "deleted": 0,
+      "id": 4
+    },
+    {
+      "fullName": "NVZ",
+      "email": "nvb@abc.vn",
+      "phone": 123456,
+      "address": "VN",
+      "balance": 0,
+      "deleted": 0,
+      "id": 5
+    },
+    {
+      "fullName": "NVB",
+      "email": "nvb@abc.vn",
+      "phone": 1234567,
+      "address": "USA",
+      "balance": 0,
+      "deleted": 0,
+      "id": 6
+    },
+    {
+      "fullName": "NVE",
+      "email": "nvb@abc.vn",
+      "phone": 1234567,
+      "address": "USE",
+      "balance": 0,
+      "deleted": 0,
+      "id": 7
+    },
+    {
+      "fullName": "Adena Chandler",
+      "email": "pedab@mailinator.com",
+      "phone": "+1 (589) 857-3047",
+      "address": "Ipsum ",
+      "balance": 0,
+      "deleted": 0,
+      "id": 8
+    },
+    {
+      "fullName": "Tiger Barnes",
+      "email": "tifax@mailinator.com",
+      "phone": "+1 (919) 549-3124",
+      "address": "Nihil qui voluptatem",
+      "balance": 0,
+      "deleted": 0,
+      "id": 9
+    },
+    {
+      "fullName": "Tiger Barnes",
+      "email": "tifax@mailinator.com",
+      "phone": "+1 (919) 549-3124",
+      "address": "Nihil qui voluptatem",
+      "balance": 0,
+      "deleted": 0,
+      "id": 10
+    },
+    {
+      "fullName": "Tiger Barnes",
+      "email": "tifax@mailinator.com",
+      "phone": "+1 (919) 549-3124",
+      "address": "Nihil qui voluptatem",
+      "balance": 0,
+      "deleted": 0,
+      "id": 11
+    },
+    {
+      "fullName": "Wendy Estes",
+      "email": "qixad@mailinator.com",
+      "phone": "+1 (884) 293-4379",
+      "address": "Quis laboris est est",
+      "balance": 0,
+      "deleted": 0,
+      "id": 12
+    },
+    {
+      "fullName": "Elton Horne",
+      "email": "sofa@mailinator.com",
+      "phone": "+1 (427) 472-8499",
+      "address": "Dolor quia corporis ",
+      "balance": 0,
+      "deleted": 0,
+      "id": 13
+    },
+    {
+      "fullName": "Lisandra Mayo",
+      "email": "litu@mailinator.com",
+      "phone": "+1 (837) 506-4082",
+      "address": "Tempore officia dol",
+      "balance": 0,
+      "deleted": 1,
+      "id": 14
+    },
+    {
+      "fullName": "Barclay Rosario",
+      "email": "vimes@mailinator.com",
+      "phone": "+1 (545) 223-6244",
+      "address": "Minim ut animi amet",
+      "balance": 0,
+      "deleted": 0,
+      "id": 15
+    },
+    {
+      "fullName": "Shelby Gentry",
+      "email": "gexuc@mailinator.com",
+      "phone": "+1 (825) 948-9275",
+      "address": "Obcaecati ad similiq",
+      "balance": 0,
+      "deleted": 0,
+      "id": 16
+    },
+    {
+      "fullName": "Hayden Sanders",
+      "email": "bykijeqiz@mailinator.com",
+      "phone": "+1 (469) 655-5551",
+      "address": "Aliquam et cumque vo",
+      "balance": 0,
+      "deleted": 0,
+      "id": 17
+    },
+    {
+      "fullName": "",
+      "email": "",
+      "phone": "",
+      "address": "",
+      "balance": 0,
+      "deleted": 1,
+      "id": 18
+    },
+    {
+      "fullName": "Ria Roach",
+      "email": "hehopygi@mailinator.com",
+      "phone": "+1 (359) 196-8228",
+      "address": "Inventore voluptatib",
+      "balance": 0,
+      "deleted": 0,
+      "id": 19
+    },
+    {
+      "fullName": "Germane Eaton",
+      "email": "tukij@mailinator.com",
+      "phone": "+1 (439) 518-5913",
+      "address": "Alias cillum esse l",
+      "balance": 0,
+      "deleted": 0,
+      "id": 20
+    }
+  ]
+}
