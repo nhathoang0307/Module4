@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <link rel="stylesheet" href="./assets/bootstrap/v5.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/fontawesome/v5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="./assets/sweetalert2/sweetalert2.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <nav class="navbar bg-primary">
+                <div class="container-fluid">
+                    <h2>List of customers</h2>
+                    <div class="d-flex">
+                        <button id="btnShowCreateModal" class="btn btn-light">
+                            <i class="fas fa-plus"></i>
+                            Create
+                        </button>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+        <div class="content">
+            <table id="tbCustomer" class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Full name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Balance</th>
+                        <th>Address</th>
+                        <th colspan="4">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Modal Create -->
+    <div id="modalCreate" class="modal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Modal create customer</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="modal-alert-danger hide"></div>
+                    <form id="frmCreateCustomer" class="" method="post">
+                        <div class="row mb-3">
+                            <div class="col-lg-6">
+                                <label for="fullName" class="form-label">Full name</label>
+                                <input type="text" class="form-control" id="fullNameCre" name="fullNameCre" />
+                            </div>
+                            <div class="col-lg-6">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="emailCre" name="emailCre" />
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="mb-3 col-lg-6">
+                                <label for="phone" class="form-label">Phone</label>
+                                <input type="tel" class="form-control" id="phoneCre" name="phoneCre" />
+                            </div>
+                            <div class="mb-3 col-lg-6">
+                                <label for="address" class="form-label">Address</label>
+                                <input type="text" class="form-control" id="addressCre" name="addressCre" />
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="btnCreateCustomer">Create</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal update -->
+    <div id="modalUpdate" class="modal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Modal update customer</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form class="" method="post">
+                        <div class="row mb-3">
+                            <div class="col-lg-6">
+                                <label for="fullName" class="form-label">Full name</label>
+                                <input type="text" class="form-control" id="fullNameUp" name="fullNameUp" />
+                            </div>
+                            <div class="col-lg-6">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="emailUp" name="emailUp" />
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="mb-3 col-lg-6">
+                                <label for="phone" class="form-label">Phone</label>
+                                <input type="tel" class="form-control" id="phoneUp" name="phoneUp" />
+                            </div>
+                            <div class="mb-3 col-lg-6">
+                                <label for="address" class="form-label">Address</label>
+                                <input type="text" class="form-control" id="addressUp" name="addressUp" />
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-light" id="btnUpdateCustomer">Update</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal deposit -->
+    <div id="modalDeposit" class="modal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Modal deposit</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="modal-alert-danger hide"></div>
+                    <form id="frmDeposit" class="" method="post">
+                        <div class="row mb-3">
+                            <div class="col-lg-6">
+                                <label for="idDep" class="form-label">Id</label>
+                                <input type="text" class="form-control" id="idDep" name="idDep" readonly />
+                            </div>
+                            <div class="col-lg-6">
+                                <label for="fullNameDep" class="form-label">Full name</label>
+                                <input type="text" class="form-control" id="fullNameDep" name="fullNameDep" readonly />
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="mb-3 col-lg-6">
+                                <label for="balanceDep" class="form-label">Balance</label>
+                                <input type="text" class="form-control" id="balanceDep" name="balanceDep" readonly />
+                            </div>
+                            <div class="mb-3 col-lg-6">
+                                <label for="transactionAmountDep" class="form-label">TransactionAmount</label>
+                                <input type="text" class="form-control" id="transactionAmountDep" name="transactionAmountDep" />
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-light" id="btnDeposit">Deposit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./assets/jquery/jquery-v3.6.0.min.js"></script>
+    <script src="./assets/jquery/jquery.validate.min.js"></script>
+    <script src="./assets/bootstrap/v5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="./assets/sweetalert2/sweetalert2.all.min.js"></script>
+    <script src="./assets/js/appbase.js"></script>
+    
+    <script>
+
+        const page = {
+            urls: {
+                getAllCustomers: AppBase.DOMAIN_API + "/customers?deleted=0",
+                findCustomerById: AppBase.DOMAIN_API + "/customers",
+                createCustomer: AppBase.DOMAIN_API + "/customers",
+                updateCustomerById: AppBase.DOMAIN_API + "/customers",
+                doDeposit: AppBase.DOMAIN_API + '/deposits',
+                deleteDeposit: AppBase.DOMAIN_API + '/deposits',
+                deleteCustomerById: AppBase.DOMAIN_API + "/customers"
+            },
+            elements: {},
+            loadData: {},
+            commands: {},
+            dialogs: {
+                elements: {},
+                loadData: {},
+                commands: {}
+            }
+        }
+        
+
+        let customers = [];
+        let currentCustomer = null;
+
+        let deposit = new Deposit();
+
+
+        page.elements.btnShowCreateModal = $('#btnShowCreateModal');
+        page.elements.modalCreate = $('#modalCreate');
+        page.dialogs.elements.modalDeposit = $('#modalDeposit');
+        page.dialogs.elements.frmDeposit = $('#frmDeposit');
+        page.dialogs.elements.idDep =$('#idDep');
+        page.dialogs.elements.fullNameDep =$('#fullNameDep');
+        page.dialogs.elements.balanceDep =$('#balanceDep');
+        page.dialogs.elements.transactionAmountDep =$('#transactionAmountDep');
+        page.dialogs.elements.btnDeposit =$('#btnDeposit');
+
+        page.loadData.getAllCustomers = () => {
+            $.ajax({
+                type: "GET",
+                url: page.urls.getAllCustomers
+            })
+            .done((data) => {
+                $.each(data, (i, item) => {
+                    let str = renderCustomer(item);
+                    $('#tbCustomer tbody').prepend(str);
+                })
+
+                addEventCreateCustomer();
+                page.dialogs.commands.addEventDeposit();
+                addEventDeleteCustomer();
+            })
+            .fail((error) => {
+                console.error(error);
+            })
+        }
+
+
+        page.elements.btnShowCreateModal.on('click', () => {
+            page.elements.modalCreate.modal('show');
+        })
+
+        page.loadData.findCustomerById = (id) => {
+            return $.ajax({
+                type: "GET",
+                url: page.urls.findCustomerById + '/' + id
+            })
+            .fail((error) => {
+                console.error(error);
+            })
+        }
+
+        let updateCustomerById = (obj) => {
+            customers.filter(item => {
+                if (item.id == obj.id) {
+                    item.fullName = obj.fullName;
+                    item.email = obj.email;
+                    item.phone = obj.phone;
+                    item.address = obj.address;
+                }
+            })
+        }
+
+        let addEventCreateCustomer = () => {
+            $('.edit').on('click', function() {
+                let id = $(this).data('id');
+
+                page.loadData.findCustomerById(id).then((customer) => {
+                    currentCustomer = customer;
+
+                    $('#fullNameUp').val(customer.fullName);
+                    $('#emailUp').val(customer.email);
+                    $('#phoneUp').val(customer.phone);
+                    $('#addressUp').val(customer.address);
+
+                    $('#modalUpdate').modal('show');
+
+                })
+                .catch(() => {
+                    alert('Customer not found');
+                });
+            })
+        }
+
+        let addEventDeleteCustomer = () => {
+            $('.delete').on('click', function() {
+                let id = $(this).data('id');
+
+                AppBase.SweetAlert.showDeleteConfirmDialog().then(result => {
+                    if (result.isConfirmed) {
+                        page.commands.checkCustomerById(id).then(() => {
+                            page.commands.deleteCustomer(id);
+                        })
+                        .catch(() => {
+                            Swal.fire({
+                                position: 'center',
+                                icon: 'error',
+                                title: 'Customer not found',
+                            })
+                        })
+                    }
+                })
+            })
+        }
+
+        page.dialogs.commands.addEventDeposit = () => {
+            $('.deposit').on('click', function () {
+                let customerId = $(this).data('id');
+
+                page.loadData.findCustomerById(customerId).then((data) => {
+                    currentCustomer = data;
+
+                    page.dialogs.elements.idDep.val(currentCustomer.id);
+                    page.dialogs.elements.fullNameDep.val(currentCustomer.fullName);
+                    page.dialogs.elements.balanceDep.val(currentCustomer.balance);
+
+                    page.dialogs.elements.modalDeposit.modal('show');
+                })
+                .catch(() => {
+                    AppBase.SweetAlert.showErrorAlert('Customer not found');
+                })
+            })
+        }
+
+        page.commands.checkCustomerById = (id) => {
+            return $.ajax({
+                type: 'PATCH',
+                url: page.urls.findCustomerById + '/' + id
+            })
+            .fail((error) => {
+                console.log(error);
+            })
+        }
+
+        page.commands.deleteCustomer = (id) => {
+            $.ajax({
+                headers: {
+                    'accept': 'application/json',
+                    'content-type': 'application/json'
+                },
+                type: 'PATCH',
+                url: page.urls.deleteCustomerById + '/' + id,
+                data: JSON.stringify({deleted: 1})
+            })
+            .done(() => {
+
+                $('#tr_' + id).remove();
+
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'success',
+                    title: 'Customer has been deleted.',
+                    showConfirmButton: false,
+                    timer: 2000
+                })
+            })
+            .fail(() => {
+                Swal.fire({
+                    position: 'center',
+                    icon: 'error',
+                    title: 'Failed to delete customer',
+                })
+            })
+        }
+
+        let removeEventCreateCustomer = () => {
+            $('.edit').off('click');
+        }
+
+        let removeEventDeleteCustomer = () => {
+            $('.delete').off('click');
+        }
+
+        let doCreateCustomer = () => {
+            // let id = generateId();
+            let fullName = $('#fullNameCre').val();
+            let email = $('#emailCre').val();
+            let phone = $('#phoneCre').val();
+            let address = $('#addressCre').val();
+            let balance = 0;
+            let deleted = 0;
+
+            let customer = new Customer();
+            // customer.id = id;
+            customer.fullName = fullName;
+            customer.email = email;
+            customer.phone = phone;
+            customer.address = address;
+            customer.balance = balance;
+            customer.deleted = deleted;
+
+            // customers.push(customer);
+
+            $.ajax({
+                headers: {
+                    'accept': 'application/json',
+                    'content-type': 'application/json'
+                },
+                type: "POST",
+                url: page.urls.createCustomer,
+                data: JSON.stringify(customer)
+            })
+            .done((data) => {
+                customer = data;
+
+                let str = renderCustomer(customer);
+                $('#tbCustomer tbody').prepend(str);
+                
+                removeEventCreateCustomer();
+                addEventCreateCustomer();
+
+                $('#modalCreate').modal('hide');
+
+                AppBase.SweetAlert.showSuccessAlert('New customer is created successfully');
+            })
+            .fail((error) => {
+                AppBase.SweetAlert.showErrorAlert('Create new customer failed');
+            })
+        }
+
+        $('#btnCreateCustomer').on('click', () => {
+            $('#frmCreateCustomer').trigger('submit');
+        })
+
+
+        $('#btnUpdateCustomer').on('click', () => {
+            let id = currentCustomer.id;
+            let fullName = $('#fullNameUp').val();
+            let email = $('#emailUp').val();
+            let phone = $('#phoneUp').val();
+            let address = $('#addressUp').val();
+
+            currentCustomer.fullName = fullName;
+            currentCustomer.email = email;
+            currentCustomer.phone = phone;
+            currentCustomer.address = address;
+
+            // updateCustomerById(currentCustomer);
+
+            $.ajax({
+                headers: {
+                    'accept': 'application/json',
+                    'content-type': 'application/json'
+                },
+                type: 'PATCH',
+                url: page.urls.updateCustomerById + '/' + id,
+                data: JSON.stringify(currentCustomer)
+            })
+            .done((data) => {
+                currentCustomer = data;
+
+                let newRow = renderCustomer(currentCustomer);
+                let currentRow = $('#tr_' + id);
+
+                currentRow.replaceWith(newRow);
+
+                removeEventCreateCustomer();
+                addEventCreateCustomer();
+
+                $('#modalUpdate').modal('hide');
+            })
+            .fail((error) => {
+                alert('Update customer failed');
+            })
+            
+        })
+
+        page.dialogs.elements.btnDeposit.on('click', () => {
+            page.dialogs.elements.frmDeposit.trigger('submit');
+        })
+
+
+        page.dialogs.commands.doDeposit = () => {
+            let currentBalance = currentCustomer.balance;
+            let transactionAmountDep = +page.dialogs.elements.transactionAmountDep.val();
+            let newBalance = currentBalance + transactionAmountDep;
+            currentCustomer.balance = newBalance;
+
+            deposit.fullName = currentCustomer.fullName;
+            deposit.transactionAmount = transactionAmountDep;
+
+            page.dialogs.commands.createDeposit().then((data) => {
+                page.dialogs.commands.incrementCustomerBalance(currentCustomer).then(() => {
+                    AppBase.SweetAlert.showSuccessAlert('Deposit success');
+                })
+                .catch(() => {
+                    page.dialogs.commands.deleteDeposit(deposit);
+
+                    AppBase.SweetAlert.showErrorAlert('Update customer fail');
+                });
+            })
+            .catch(() => {
+                AppBase.SweetAlert.showErrorAlert('Deposit fail');
+            });
+        }
+
+        page.dialogs.commands.createDeposit = () => {
+            return $.ajax({
+                headers: {
+                    'accept': 'application/json',
+                    'content-type': 'application/json'
+                },
+                type: 'POST',
+                url: page.urls.doDeposit,
+                data: JSON.stringify(deposit)
+            })
+            .done((data) => {
+                deposit = data;
+            })
+        }
+
+        page.dialogs.commands.incrementCustomerBalance = (customer) => {
+            return $.ajax({
+                headers: {
+                    'accept': 'application/json',
+                    'content-type': 'application/json'
+                },
+                type: 'PATCH',
+                url: page.urls.updateCustomerById + '/' + customer.id,
+                data: JSON.stringify(customer)
+            })
+        }
+
+        page.dialogs.commands.deleteDeposit = () => {
+            $.ajax({
+                headers: {
+                    'accept': 'application/json',
+                    'content-type': 'application/json'
+                },
+                type: 'DELETE',
+                url: page.urls.deleteDeposit + '/' + deposit.id
+            })
+        }
+
+        let generateId = () => {
+            return Math.random().toString(16).slice(13);
+        }
+
+        let renderCustomer = (item) => {
+            return `
+                <tr id="tr_${item.id}">
+                    <td>${item.id}</td>
+                    <td>${item.fullName}</td>
+                    <td>${item.email}</td>
+                    <td>${item.phone}</td>
+                    <td>${item.balance}</td>
+                    <td>${item.address}</td>
+                    <td>
+                        <button class="btn btn-outline-secondary edit" data-id="${item.id}">
+                            <i class="far fa-edit"></i>
+                        </button>
+                    </td>
+                    <td>
+                        <button class="btn btn-outline-success deposit" data-id="${item.id}">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </td>
+                    <td>
+                        <button class="btn btn-outline-primary">
+                            <i class="fas fa-exchange-alt"></i>
+                        </button>
+                    </td>
+                    <td>
+                        <button class="btn btn-outline-danger delete" data-id="${item.id}">
+                            <i class="fas fa-trash-alt"></i>
+                        </button>
+                    </td>
+                </tr>
+            `;
+        }
+
+
+        $('#modalCreate').on('hidden.bs.modal', () => {
+            $('#frmCreateCustomer')[0].reset();
+            $('#frmCreateCustomer').validate().resetForm();
+            
+            $('#modalCreate .modal-alert-danger').empty().removeClass("show").addClass("hide");
+            $('#frmCreateCustomer').find("input.error").removeClass("error");
+        })
+
+        $('#frmCreateCustomer').validate({
+            rules: {
+                fullNameCre: {
+                    required: true,
+                    minlength: 5,
+                    maxlength: 20
+                },
+                emailCre: {
+                    required: true,
+                    minlength: 5,
+                    maxlength: 40
+                }
+            },
+            messages: {
+                fullNameCre: {
+                    required: 'Full name is required',
+                    minlength: 'Min character of full name is ${0}',
+                    maxlength: 'Max character of full name is ${0}'
+                },
+                emailCre: {
+                    required: 'Email is required',
+                    minlength: 'Min character of email is ${0}',
+                    maxlength: 'Max character of email is ${0}'
+                }
+            },
+            errorLabelContainer: "#modalCreate .modal-alert-danger",
+            errorPlacement: function (error, element) {
+                error.appendTo("#modalCreate .modal-alert-danger");
+            },
+            showErrors: function(errorMap, errorList) {
+                if (this.numberOfInvalids() > 0) {
+                    $("#modalCreate .modal-alert-danger").removeClass("hide").addClass("show");
+                } else {
+                    $("#modalCreate .modal-alert-danger").removeClass("show").addClass("hide").empty();
+                    $("#frmCreateCustomer input.error").removeClass("error");
+                }
+                this.defaultShowErrors();
+            },
+            submitHandler: function () {
+                doCreateCustomer();
+            }
+        });
+
+
+        page.dialogs.elements.frmDeposit.validate({
+            rules: {
+                transactionAmountDep: {
+                    required: true,
+                    number: true,
+                    min: 1000,
+                    max: 1000000
+                }
+            },
+            messages: {
+                transactionAmountDep: {
+                    required: 'Transaction amount is required',
+                    number: 'Transaction amount must be number',
+                    min: 'Transaction amount must be more than ${0}',
+                    max: 'Transaction amount must be less than ${0}'
+                }
+            },
+            errorLabelContainer: "#modalDeposit .modal-alert-danger",
+            errorPlacement: function (error, element) {
+                error.appendTo("#modalDeposit .modal-alert-danger");
+            },
+            showErrors: function(errorMap, errorList) {
+                if (this.numberOfInvalids() > 0) {
+                    $("#modalDeposit .modal-alert-danger").removeClass("hide").addClass("show");
+                } else {
+                    $("#modalDeposit .modal-alert-danger").removeClass("show").addClass("hide").empty();
+                    $("#frmDeposit input.error").removeClass("error");
+                }
+                this.defaultShowErrors();
+            },
+            submitHandler: function () {
+                page.dialogs.commands.doDeposit();
+            }
+        });
+
+
+
+
+        $(() => {
+            page.loadData.getAllCustomers();
+        })
+
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <link rel="stylesheet" href="./assets/bootstrap/v5.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/fontawesome/v5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="./assets/sweetalert2/sweetalert2.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <nav class="navbar bg-primary">
+                <div class="container-fluid">
+                    <h2>List of customers</h2>
+                    <div class="d-flex">
+                        <button id="btnShowCreateModal" class="btn btn-light">
+                            <i class="fas fa-plus"></i>
+                            Create
+                        </button>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+        <div class="content">
+            <table id="tbCustomer" class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Full name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Balance</th>
+                        <th>Address</th>
+                        <th colspan="3">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Modal Create -->
+    <div id="modalCreate" class="modal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Modal create customer</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="modal-alert-danger hide"></div>
+                    <form id="frmCreateCustomer" class="" method="post">
+                        <div class="row mb-3">
+                            <div class="col-lg-6">
+                                <label for="fullName" class="form-label">Full name</label>
+                                <input type="text" class="form-control" id="fullNameCre" name="fullNameCre" />
+                            </div>
+                            <div class="col-lg-6">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="emailCre" name="emailCre" />
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="mb-3 col-lg-6">
+                                <label for="phone" class="form-label">Phone</label>
+                                <input type="tel" class="form-control" id="phoneCre" name="phoneCre" />
+                            </div>
+                            <div class="mb-3 col-lg-6">
+                                <label for="address" class="form-label">Address</label>
+                                <input type="text" class="form-control" id="addressCre" name="addressCre" />
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="btnCreateCustomer">Create</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal update -->
+    <div id="modalUpdate" class="modal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Modal update customer</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form class="" method="post">
+                        <div class="row mb-3">
+                            <div class="col-lg-6">
+                                <label for="fullName" class="form-label">Full name</label>
+                                <input type="text" class="form-control" id="fullNameUp" name="fullNameUp" />
+                            </div>
+                            <div class="col-lg-6">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="emailUp" name="emailUp" />
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="mb-3 col-lg-6">
+                                <label for="phone" class="form-label">Phone</label>
+                                <input type="tel" class="form-control" id="phoneUp" name="phoneUp" />
+                            </div>
+                            <div class="mb-3 col-lg-6">
+                                <label for="address" class="form-label">Address</label>
+                                <input type="text" class="form-control" id="addressUp" name="addressUp" />
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-light" id="btnUpdateCustomer">Update</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal delete -->
+    <div id="modalDelete" class="modal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Modal delete customer</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <img class="row" src="/assets/picture/istockphoto-1166384311-612x612.jpg" alt=""
+                        style="margin:auto; height: 80px;">
+                    <span>Are you sure you want to delete
+                        <span> <input type="text" id="fullNameDel" name="fullNameDel" readonly></span>
+                        ?</span>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-light" id="btnDeleteCustomer">Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Deposit -->
+    <div id="modalDeposit" class="modal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Modal Deposit customer</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                <div class="modal-alert-danger hide"></div>
+                    <form id="frmDeposit" method="post">
+                        <div class="row mb-3">
+                            <div class="col-lg-6">
+                                <label for="fullName" class="form-label">Full name</label>
+                                <input type="text" class="form-control" id="fullNameDep" name="fullNameDep" disabled />
+                            </div>
+                            <div class="col-lg-6">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="emailDep" name="emailUp" disabled />
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="mb-3 col-lg-6">
+                                <label for="phone" class="form-label">Balance</label>
+                                <input type="text" class="form-control" id="BalanceDep" name="BalanceDep" disabled />
+                            </div>
+                            <div class="mb-3 col-lg-6">
+                                <label for="phone" class="form-label">Deposit Amount</label>
+                                <input type="text" class="form-control" id="AmountDep" name="AmountDep" />
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-light" id="btnDeposit">Deposit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Withdraw -->
+    <div id="modalWithdraw" class="modal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Modal Withdraw customer</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form class="" method="post">
+                        <div class="row mb-3">
+                            <div class="col-lg-6">
+                                <label for="fullName" class="form-label">Full name</label>
+                                <input type="text" class="form-control" id="fullNameWith" name="fullNameWith"
+                                    disabled />
+                            </div>
+                            <div class="col-lg-6">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="emailWith" name="emailWith" disabled />
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="mb-3 col-lg-6">
+                                <label for="phone" class="form-label"> Balance</label>
+                                <input type="text" class="form-control" id="balanceWith" name="balanceWith" disabled />
+                            </div>
+                            <div class="mb-3 col-lg-6">
+                                <label for="phone" class="form-label">Withdraw Amount</label>
+                                <input type="text" class="form-control" id="AmountWith" name="AmountWith" />
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-light" id="btnWithdrawCustomer">Withdraw</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Transfer -->
+    <div id="modalTransfer" class="modal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Modal Transfer customer</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form class="" method="post">
+                        <div class="row mb-3">
+                            <div class="col-lg-6">
+                                <label for="fullNameTrans" class="form-label">Full name</label>
+                                <input type="text" class="form-control" id="senderFullNameTrans" name="senderFullNameTrans"
+                                    disabled />
+                            </div>
+                            <div class="col-lg-6">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="senderEmailTrans" name="senderEmailTrans" disabled />
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="mb-3 col-lg-6">
+                                <label for="balanceTrans" class="form-label">Balance</label>
+                                <input type="text" class="form-control" id="senderBalanceTrans" name="senderBalanceTrans" disabled />
+                            </div>
+                            <div class="mb-3 col-lg-6">
+                                <label for="selectRecipientsTransfer" class="form-label"> Recipient Name</label>
+                                <select class="form-select" id="selectRecipientsTransfer"
+                                    name="selectRecipientsTransfer">
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="mb-3 col-lg-4">
+                                <label for="AmountTrans" class="form-label">Transfer Amount</label>
+                                <input type="text" class="form-control" id="transferAmountTrans" name="transferAmountTrans" />
+                            </div>
+                            <div class="mb-3 col-lg-4">
+                                <label for="ratioFee" class="form-label">% Fee</label>
+                                <input type="text" class="form-control" id="feeTrans" name="feeTrans" value="10" disabled />
+                            </div>
+                            <div class="mb-3 col-lg-4">
+                                <label for="transactionAmount" class="form-label">Total Amount Of Transaction</label>
+                                <input type="text" class="form-control" id="transactionAmountTrans" name="transactionAmountTrans"  disabled/>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-light" id="btnTransfer">Transfer</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="./assets/jquery/jquery-v3.6.0.min.js"></script>
+    <script src="./assets/jquery/jquery.validate.min.js"></script>
+    <script src="./assets/bootstrap/v5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="./assets/sweetalert2/sweetalert2.all.min.js"></script>
+    <script src="./assets/js/appbase.js"></script>
+    <script src="./banking.js"></script>
+
+
+
+</body>
+
+</html>
