@@ -1,0 +1,470 @@
+{
+  "customers": [
+    {
+      "id": 1,
+      "fullName": "Leo Craig",
+      "email": "nonavak@mailinator.com",
+      "phone": "+1 (578) 499-8414",
+      "locationRegion": {
+        "provinceId": "10",
+        "provinceName": "Tỉnh Lào Cai",
+        "districtId": "919",
+        "districtName": "Quận Cái Răng",
+        "wardId": "31261",
+        "wardName": "Thị trấn Cờ Đỏ",
+        "address": "Qui earum at eius qu"
+      },
+      "balance": 0,
+      "deleted": 0
+    },
+    {
+      "id": 2,
+      "fullName": "Kuame Burris",
+      "email": "siqosynak@mailinator.com",
+      "phone": "+1 (853) 391-8265",
+      "locationRegion": {
+        "provinceId": "24",
+        "provinceName": "Tỉnh Bắc Giang",
+        "districtId": "927",
+        "districtName": "Huyện Thới Lai",
+        "wardId": "31255",
+        "wardName": "Xã Trung Hưng",
+        "address": "Quibusdam voluptatib"
+      },
+      "balance": 0,
+      "deleted": 0
+    },
+    {
+      "id": 3,
+      "fullName": "Perry Harmon",
+      "email": "kuqo@mailinator.com",
+      "phone": "+1 (602) 407-6725",
+      "locationRegion": {
+        "provinceId": "80",
+        "provinceName": "Tỉnh Long An",
+        "districtId": "806",
+        "districtName": "Huyện Cần Đước",
+        "wardId": "28117",
+        "wardName": "Xã Long Định",
+        "address": "Optio nostrud irure"
+      },
+      "balance": 0,
+      "deleted": 1
+    },
+    {
+      "id": 5,
+      "fullName": "Mia Garza",
+      "email": "lebosife@mailinator.com",
+      "phone": "+1 (106) 821-5762",
+      "locationRegion": {
+        "provinceId": "37",
+        "provinceName": "Tỉnh Ninh Bình",
+        "districtId": "376",
+        "districtName": "Huyện Kim Sơn",
+        "wardId": "14677",
+        "wardName": "Xã Định Hóa",
+        "address": "Et quia iusto conseq"
+      },
+      "balance": 0,
+      "deleted": 0
+    },
+    {
+      "id": 12,
+      "fullName": "Susan Mcdaniel",
+      "email": "zymixenyf@mailinator.com",
+      "phone": "+1 (189) 547-4686",
+      "locationRegion": {
+        "provinceId": "04",
+        "provinceName": "Tỉnh Cao Bằng",
+        "districtId": "046",
+        "districtName": "Huyện Trà Lĩnh",
+        "wardId": "01450",
+        "wardName": "Xã Cô Mười",
+        "address": "Repudiandae veritati"
+      },
+      "balance": 0,
+      "deleted": 0
+    },
+    {
+      "id": 13,
+      "fullName": "Yuri Bonner",
+      "email": "wubytikor@mailinator.com",
+      "phone": "+1 (561) 276-9939",
+      "locationRegion": {
+        "provinceId": "44",
+        "provinceName": "Tỉnh Quảng Bình",
+        "districtId": "456",
+        "districtName": "Huyện Quảng Ninh",
+        "wardId": "19237",
+        "wardName": "Xã Xuân Ninh",
+        "address": "Similique aut eu num"
+      },
+      "balance": 0,
+      "deleted": 0
+    },
+    {
+      "id": 15,
+      "fullName": "Cameron Flynn",
+      "email": "bidigox@mailinator.com",
+      "phone": "+1 (131) 472-5674",
+      "locationRegion": {
+        "provinceId": "80",
+        "provinceName": "Tỉnh Long An",
+        "districtId": "797",
+        "districtName": "Huyện Vĩnh Hưng",
+        "wardId": "27760",
+        "wardName": "Xã Hưng Điền A",
+        "address": "Nesciunt quia illum"
+      },
+      "balance": 0,
+      "deleted": 0
+    },
+    {
+      "id": 16,
+      "fullName": "Edward Pena",
+      "email": "tawonip@mailinator.com",
+      "phone": "+1 (661) 721-6664",
+      "locationRegion": {
+        "provinceId": "46",
+        "provinceName": "Tỉnh Thừa Thiên Huế",
+        "districtId": "481",
+        "districtName": "Huyện A Lưới",
+        "wardId": "20044",
+        "wardName": "Thị trấn A Lưới",
+        "address": "Magni dolorem ipsum "
+      },
+      "balance": 0,
+      "deleted": 0
+    },
+    {
+      "id": 17,
+      "fullName": "Ayanna Hull",
+      "email": "fazel@mailinator.com",
+      "phone": "+1 (538) 538-9055",
+      "locationRegion": {
+        "provinceId": "1111",
+        "provinceName": "Thành phố Cần Thơ",
+        "districtId": "925",
+        "districtName": "Huyện Cờ Đỏ",
+        "wardId": "31261",
+        "wardName": "Thị trấn Cờ Đỏ",
+        "address": "Amet id doloremque "
+      },
+      "balance": 0,
+      "deleted": 0
+    },
+    {
+      "id": 19,
+      "fullName": "Glenna Ball",
+      "email": "jolihy@mailinator.com",
+      "phone": "+1 (871) 235-1574",
+      "locationRegion": {
+        "provinceId": "66",
+        "provinceName": "Tỉnh Đắk Lắk",
+        "districtId": "647",
+        "districtName": "Huyện Buôn Đôn",
+        "wardId": "24247",
+        "wardName": "Xã Cuôr KNia",
+        "address": "Illo tempora et volu"
+      },
+      "balance": 0,
+      "deleted": 0
+    },
+    {
+      "id": 20,
+      "fullName": "Myles Day",
+      "email": "nynumufat@mailinator.com",
+      "phone": "+1 (166) 147-2246",
+      "locationRegion": {
+        "provinceId": "84",
+        "provinceName": "Tỉnh Trà Vinh",
+        "districtId": "844",
+        "districtName": "Huyện Càng Long",
+        "wardId": "29266",
+        "wardName": "Thị trấn Càng Long",
+        "address": "Sit est impedit s"
+      },
+      "balance": 0,
+      "deleted": 0
+    },
+    {
+      "id": 21,
+      "fullName": "Felicia Oneal",
+      "email": "xoxibakoci@mailinator.com",
+      "phone": "+1 (776) 738-4392",
+      "locationRegion": {
+        "provinceId": "33",
+        "provinceName": "Tỉnh Hưng Yên",
+        "districtId": "329",
+        "districtName": "Huyện Ân Thi",
+        "wardId": "12142",
+        "wardName": "Thị trấn Ân Thi",
+        "address": "Quod culpa molestiae"
+      },
+      "balance": 0,
+      "deleted": 0
+    },
+    {
+      "id": 22,
+      "fullName": "Eagan Meadows",
+      "email": "zokosol@mailinator.com",
+      "phone": "+1 (878) 317-1979",
+      "locationRegion": {
+        "provinceId": "06",
+        "provinceName": "Tỉnh Bắc Kạn",
+        "districtId": "061",
+        "districtName": "Huyện Ba Bể",
+        "wardId": "12205",
+        "wardName": "Thị trấn Khoái Châu",
+        "address": "Quaerat quidem aut N"
+      },
+      "balance": 0,
+      "deleted": 1
+    },
+    {
+      "id": 23,
+      "fullName": "Zenaida Booker",
+      "email": "biza@mailinator.com",
+      "phone": "+1 (798) 146-2439",
+      "locationRegion": {
+        "provinceId": "67",
+        "provinceName": "Tỉnh Đắk Nông",
+        "districtId": "662",
+        "districtName": "Huyện Cư Jút",
+        "wardId": "24640",
+        "wardName": "Thị trấn Ea T'Ling",
+        "address": "Voluptate architecto"
+      },
+      "balance": 0,
+      "deleted": 1
+    },
+    {
+      "id": 24,
+      "fullName": "Abel Prince",
+      "email": "zihiwomu@mailinator.com",
+      "phone": "+1 (829) 381-7278",
+      "locationRegion": {
+        "provinceId": "60",
+        "provinceName": "Tỉnh Bình Thuận",
+        "districtId": "596",
+        "districtName": "Huyện Bắc Bình",
+        "wardId": "23005",
+        "wardName": "Thị trấn Chợ Lầu",
+        "address": "Voluptatum voluptate"
+      },
+      "balance": 0,
+      "deleted": 1
+    },
+    {
+      "id": 25,
+      "fullName": "Callum Gomez",
+      "email": "bywacowe@mailinator.com",
+      "phone": "+1 (659) 841-6803",
+      "locationRegion": {
+        "provinceId": "66",
+        "provinceName": "Tỉnh Đắk Lắk",
+        "districtId": "647",
+        "districtName": "Huyện Buôn Đôn",
+        "wardId": "24247",
+        "wardName": "Xã Cuôr KNia",
+        "address": "Consectetur nulla pr"
+      },
+      "balance": 0,
+      "deleted": 1
+    },
+    {
+      "id": 26,
+      "fullName": "Eric Pearson",
+      "email": "mawu@mailinator.com",
+      "phone": "+1 (928) 897-6175",
+      "locationRegion": {
+        "provinceId": "44",
+        "provinceName": "Tỉnh Quảng Bình",
+        "districtId": "455",
+        "districtName": "Huyện Bố Trạch",
+        "wardId": "19111",
+        "wardName": "Thị trấn Hoàn Lão",
+        "address": "Excepturi porro qui "
+      },
+      "balance": 0,
+      "deleted": 1
+    },
+    {
+      "id": 27,
+      "fullName": "Maggy Manning",
+      "email": "fokovu@mailinator.com",
+      "phone": "+1 (841) 743-8601",
+      "locationRegion": {
+        "provinceId": "44",
+        "provinceName": "Tỉnh Quảng Bình",
+        "districtId": "455",
+        "districtName": "Huyện Bố Trạch",
+        "wardId": "19111",
+        "wardName": "Thị trấn Hoàn Lão",
+        "address": "Omnis qui quia Nam r"
+      },
+      "balance": 0,
+      "deleted": 1,
+      "address": "a"
+    },
+    {
+      "id": 28,
+      "fullName": "Penelope Gould",
+      "email": "masux@mailinator.com",
+      "phone": "+1 (807) 747-9623",
+      "locationRegion": {
+        "provinceId": "82",
+        "provinceName": "Tỉnh Tiền Giang",
+        "districtId": "819",
+        "districtName": "Huyện Cái Bè",
+        "wardId": "28360",
+        "wardName": "Thị trấn Cái Bè",
+        "address": "Qui aliquid assumend"
+      },
+      "balance": 0,
+      "deleted": 1
+    }
+  ],
+  "deposits": [
+    {
+      "fullName": "Louis Beard",
+      "transactionAmount": 10000,
+      "id": 1
+    },
+    {
+      "fullName": "Xaviera Nielsen",
+      "transactionAmount": 1000,
+      "id": 2
+    },
+    {
+      "fullName": "Louis Beard",
+      "transactionAmount": 10000,
+      "id": 3
+    },
+    {
+      "fullName": "Emerson Booth",
+      "transactionAmount": 10000,
+      "id": 4
+    },
+    {
+      "fullName": "Emerson Booth",
+      "transactionAmount": 41000,
+      "id": 5
+    },
+    {
+      "fullName": "Emerson Booth",
+      "transactionAmount": 1000,
+      "id": 6
+    },
+    {
+      "fullName": "Emerson Booth",
+      "transactionAmount": 1000,
+      "id": 7
+    },
+    {
+      "fullName": "Emerson Booth",
+      "transactionAmount": 1000,
+      "id": 8
+    },
+    {
+      "fullName": "Emerson Booth",
+      "transactionAmount": 10000,
+      "id": 9
+    },
+    {
+      "fullName": "Emerson Booth",
+      "transactionAmount": 100000,
+      "id": 10
+    },
+    {
+      "fullName": "Emerson Booth",
+      "transactionAmount": 1000,
+      "id": 11
+    },
+    {
+      "fullName": "Armand Molina",
+      "transactionAmount": 1000000,
+      "id": 12
+    },
+    {
+      "fullName": "Armand Molina",
+      "transactionAmount": 1000,
+      "id": 13
+    },
+    {
+      "fullName": "Xaviera Nielsen",
+      "transactionAmount": 1000,
+      "id": 14
+    },
+    {
+      "fullName": "Xaviera Nielsen",
+      "transactionAmount": 1000,
+      "id": 15
+    },
+    {
+      "fullName": "Xaviera Nielsen",
+      "transactionAmount": 1000,
+      "id": 16
+    },
+    {
+      "fullName": "Xaviera Nielsen",
+      "transactionAmount": 1000,
+      "id": 17
+    },
+    {
+      "fullName": "Xaviera Nielsen",
+      "transactionAmount": 1000,
+      "id": 18
+    },
+    {
+      "fullName": "Shelby Gentry",
+      "transactionAmount": 1000,
+      "id": 19
+    },
+    {
+      "fullName": "Barclay Rosario",
+      "transactionAmount": 1000,
+      "id": 20
+    },
+    {
+      "fullName": "Shelby Gentry",
+      "transactionAmount": 1000,
+      "id": 21
+    },
+    {
+      "fullName": "Barclay Rosario",
+      "transactionAmount": 1000,
+      "id": 22
+    },
+    {
+      "fullName": "Shelby Gentry",
+      "transactionAmount": 1000,
+      "id": 23
+    },
+    {
+      "id": 24,
+      "fullName": "Shelby Gentry",
+      "transactionAmount": 1000
+    },
+    {
+      "id": 25,
+      "fullName": "Barclay Rosario",
+      "transactionAmount": 1000
+    },
+    {
+      "id": 26,
+      "fullName": "Louis Beard",
+      "transactionAmount": 1000
+    },
+    {
+      "id": 27,
+      "fullName": "Shelby Gentry",
+      "transactionAmount": 1000
+    },
+    {
+      "id": 28,
+      "fullName": "Barclay Rosario",
+      "transactionAmount": 1000
+    }
+  ]
+}

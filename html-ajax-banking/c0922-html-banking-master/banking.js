@@ -6,17 +6,33 @@ const page = {
         updateCustomerById: AppBase.DOMAIN_API + "/customers",
         deleteCustomerById: AppBase.DOMAIN_API + "/customers",
         getSelectRecipientsNE: AppBase.DOMAIN_API + "/customers?deleted=0&id_ne=",
-        deposit: AppBase.DOMAIN_API + "/customers",
+        doDeposit: AppBase.DOMAIN_API + '/deposits',
+        deleteDeposit: AppBase.DOMAIN_API + '/deposits',
         withdraw: AppBase.DOMAIN_API + "/customers",
         Transfer: AppBase.DOMAIN_API + "/customers",
     },
     elements: {},
     loadData: {},
-    commands: {}
+    commands: {},
+    dialogs: {
+        elements: {},
+        loadData: {},
+        commands: {}
+    }
 }
 
 let customers = [];
 let currentCustomer = null;
+let deposit = new Deposit();
+
+page.elements.btnShowCreateModal = $('#btnShowCreateModal');
+page.elements.modalCreate = $('#modalCreate');
+page.dialogs.elements.modalDeposit = $('#modalDeposit');
+page.dialogs.elements.frmDeposit = $('#frmDeposit');
+page.dialogs.elements.fullNameDep =$('#fullNameDep');
+page.dialogs.elements.balanceDep =$('#balanceDep');
+page.dialogs.elements.transactionAmountDep =$('#transactionAmountDep');
+page.dialogs.elements.btnDeposit =$('#btnDeposit');
 
 let getAllCustomers = () => {
     console.log("getallcustomers");
@@ -198,7 +214,7 @@ let showDeposit = () => {
             $('#fullNameDep').val(currentCustomer.fullName);
             $('#emailDep').val(currentCustomer.email);
             $('#BalanceDep').val(currentCustomer.balance);
-            $('#AmountDep').val(0);
+            $('#transactionAmountDep').val(0);
             $('#modalDeposit').modal('show');
 
         })
@@ -388,34 +404,75 @@ page.commands.deleteCustomer = (id) => {
         })
 }
 
-$('#btnDeposit').on('click', () => {
-    $('#frmDeposit').trigger('submit');
+page.dialogs.elements.btnDeposit.on('click', () => {
+    page.dialogs.elements.frmDeposit.trigger('submit');
 })
 
 
-let doDeposit = () => {
-    let id = currentCustomer.id;
-    let balanceNew = +($('#AmountDep').val());
-    let balanceOld = +(currentCustomer.balance);
-    currentCustomer.balance = balanceOld + balanceNew;
-    $.ajax({
-        headers: {
-            'accept': 'application/json',
-            'content-type': 'application/json'
-        },
-        type: 'PATCH',
-        url: page.urls.deposit + '/' + id,
-        data: JSON.stringify(currentCustomer)
-    })
-        .done((data) => {
+// let doDeposit = () => {
+//     let id = currentCustomer.id;
+//     let balanceNew = +($('#AmountDep').val());
+//     let balanceOld = +(currentCustomer.balance);
+//     currentCustomer.balance = balanceOld + balanceNew;
+//     $.ajax({
+//         headers: {
+//             'accept': 'application/json',
+//             'content-type': 'application/json'
+//         },
+//         type: 'PATCH',
+//         url: page.urls.deposit + '/' + id,
+//         data: JSON.stringify(currentCustomer)
+//     })
+//         .done((data) => {
 
-            currentCustomer = data;
+//             currentCustomer = data;
+
+//             let newRow = renderCustomer(currentCustomer);
+//             let currentRow = $('#tr_' + id);
+
+//             currentRow.replaceWith(newRow);
+
+
+//             removeShowEditCustomer();
+//             showEditCustomer();
+//             removeShowDeleteCustomer();
+//             showDeleteCustomer();
+//             removeShowDeposit();
+//             showDeposit();
+//             removeShowWithdraw();
+//             showWithdraw();
+//             removeShowTransfer();
+//             showTransfer();
+
+//             $('#modalDeposit').modal('hide');
+//         })
+//         .fail((error) => {
+//             alert('Deposit failed');
+//         })
+// }
+
+page.dialogs.commands.doDeposit = () => {
+    let currentBalance = +currentCustomer.balance;
+    let transactionAmountDep = +page.dialogs.elements.transactionAmountDep.val();
+    let newBalance = currentBalance + transactionAmountDep;
+    currentCustomer.balance = +newBalance;
+    deposit.id=null;
+    deposit.fullName = currentCustomer.fullName;
+    deposit.transactionAmount = transactionAmountDep;
+
+    console.log("currentBalance:  " + currentBalance);
+    console.log("transactionAmountDep:  " + transactionAmountDep);
+    console.log("newBalance:  " + newBalance);
+
+    page.dialogs.commands.createDeposit().then((data) => {
+        page.dialogs.commands.incrementCustomerBalance(currentCustomer).then(() => {
+            AppBase.SweetAlert.showSuccessAlert('Deposit success');
+
 
             let newRow = renderCustomer(currentCustomer);
-            let currentRow = $('#tr_' + id);
+            let currentRow = $('#tr_' + currentCustomer.id);
 
             currentRow.replaceWith(newRow);
-
 
             removeShowEditCustomer();
             showEditCustomer();
@@ -430,9 +487,53 @@ let doDeposit = () => {
 
             $('#modalDeposit').modal('hide');
         })
-        .fail((error) => {
-            alert('Deposit failed');
-        })
+        .catch(() => {
+            page.dialogs.commands.deleteDeposit(deposit);
+
+            AppBase.SweetAlert.showErrorAlert('Update customer fail');
+        });
+    })
+    .catch(() => {
+        AppBase.SweetAlert.showErrorAlert('Deposit fail');
+    });
+}
+
+page.dialogs.commands.createDeposit = () => {
+    return $.ajax({
+        headers: {
+            'accept': 'application/json',
+            'content-type': 'application/json'
+        },
+        type: 'POST',
+        url: page.urls.doDeposit,
+        data: JSON.stringify(deposit)
+    })
+    .done((data) => {
+        deposit = data;
+    })
+}
+
+page.dialogs.commands.incrementCustomerBalance = (customer) => {
+    return $.ajax({
+        headers: {
+            'accept': 'application/json',
+            'content-type': 'application/json'
+        },
+        type: 'PATCH',
+        url: page.urls.updateCustomerById + '/' + customer.id,
+        data: JSON.stringify(customer)
+    })
+}
+
+page.dialogs.commands.deleteDeposit = () => {
+    $.ajax({
+        headers: {
+            'accept': 'application/json',
+            'content-type': 'application/json'
+        },
+        type: 'DELETE',
+        url: page.urls.deleteDeposit + '/' + deposit.id
+    })
 }
 
 
@@ -460,7 +561,7 @@ $('#btnWithdrawCustomer').on('click', () => {
 
             currentRow.replaceWith(newRow);
 
-
+            AppBase.SweetAlert.showSuccessAlert('Withdraw success');
             removeShowEditCustomer();
             showEditCustomer();
             removeShowDeleteCustomer();
@@ -479,49 +580,7 @@ $('#btnWithdrawCustomer').on('click', () => {
         })
 })
 
-// $('#btnTransfer').on('click', () => {
-//     let id = currentCustomer.id;
-//     let transactionAmount = ($('#transferAmountTrans').val());
-//     let fee = ($('#feeTrans').val());
-//     let transactionAmountTrans = +transactionAmount+ +transactionAmount*(+fee/100);
-//     let senderbalanceOld = currentCustomer.balance;
-//     currentCustomer.balance = +senderbalanceOld - transactionAmountTrans;
 
-//     $.ajax({
-//         headers: {
-//             'accept': 'application/json',
-//             'content-type': 'application/json'
-//         },
-//         type: 'PATCH',
-//         url: page.urls.Transfer + '/' + id,
-//         data: JSON.stringify(currentCustomer)
-//     })
-//         .done((data) => {
-//             currentCustomer = data;
-
-//             let newRow = renderCustomer(currentCustomer);
-//             let currentRow = $('#tr_' + id);
-
-//             currentRow.replaceWith(newRow);
-
-
-//             removeShowEditCustomer();
-//             showEditCustomer();
-//             removeShowDeleteCustomer();
-//             showDeleteCustomer();
-//             removeShowDeposit();
-//             showDeposit();
-//             removeShowWithdraw();
-//             showWithdraw();
-//             removeShowTransfer();
-//             showTransfer();
-
-//             $('#modalTransfer').modal('hide');
-//         })
-//         .fail((error) => {
-//             alert('Transfer failed');
-//         })
-// })
 
 $('#btnTransfer').on('click', () => {
     let id = currentCustomer.id;
@@ -702,9 +761,9 @@ $('#frmCreateCustomer').validate({
 });
 
 
-$('#frmDeposit').validate({
+page.dialogs.elements.frmDeposit.validate({
     rules: {
-        AmountDep: {
+        transactionAmountDep: {
             required: true,
             number: true,
             min: 1000,
@@ -712,7 +771,7 @@ $('#frmDeposit').validate({
         }
     },
     messages: {
-        AmountDep: {
+        transactionAmountDep: {
             required: 'Transaction amount is required',
             number: 'Transaction amount must be number',
             min: 'Transaction amount must be more than ${0}',
@@ -733,7 +792,7 @@ $('#frmDeposit').validate({
         this.defaultShowErrors();
     },
     submitHandler: function () {
-        doDeposit();
+        page.dialogs.commands.doDeposit();
     }
 });
 

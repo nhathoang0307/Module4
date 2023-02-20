@@ -48,6 +48,8 @@
         </div>
     </div>
 
+
+
     <!-- Modal Create -->
     <div id="modalCreate" class="modal" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered modal-lg">
@@ -161,7 +163,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                <div class="modal-alert-danger hide"></div>
+                    <div class="modal-alert-danger hide"></div>
                     <form id="frmDeposit" method="post">
                         <div class="row mb-3">
                             <div class="col-lg-6">
@@ -179,8 +181,9 @@
                                 <input type="text" class="form-control" id="BalanceDep" name="BalanceDep" disabled />
                             </div>
                             <div class="mb-3 col-lg-6">
-                                <label for="phone" class="form-label">Deposit Amount</label>
-                                <input type="text" class="form-control" id="AmountDep" name="AmountDep" />
+                                <label for="transactionAmountDep" class="form-label">Deposit Amount</label>
+                                <input type="text" class="form-control" id="transactionAmountDep"
+                                    name="transactionAmountDep" />
                             </div>
                         </div>
                     </form>
@@ -248,18 +251,20 @@
                         <div class="row mb-3">
                             <div class="col-lg-6">
                                 <label for="fullNameTrans" class="form-label">Full name</label>
-                                <input type="text" class="form-control" id="senderFullNameTrans" name="senderFullNameTrans"
-                                    disabled />
+                                <input type="text" class="form-control" id="senderFullNameTrans"
+                                    name="senderFullNameTrans" disabled />
                             </div>
                             <div class="col-lg-6">
                                 <label for="email" class="form-label">Email</label>
-                                <input type="email" class="form-control" id="senderEmailTrans" name="senderEmailTrans" disabled />
+                                <input type="email" class="form-control" id="senderEmailTrans" name="senderEmailTrans"
+                                    disabled />
                             </div>
                         </div>
                         <div class="row mb-3">
                             <div class="mb-3 col-lg-6">
                                 <label for="balanceTrans" class="form-label">Balance</label>
-                                <input type="text" class="form-control" id="senderBalanceTrans" name="senderBalanceTrans" disabled />
+                                <input type="text" class="form-control" id="senderBalanceTrans"
+                                    name="senderBalanceTrans" disabled />
                             </div>
                             <div class="mb-3 col-lg-6">
                                 <label for="selectRecipientsTransfer" class="form-label"> Recipient Name</label>
@@ -271,15 +276,18 @@
                         <div class="row mb-3">
                             <div class="mb-3 col-lg-4">
                                 <label for="AmountTrans" class="form-label">Transfer Amount</label>
-                                <input type="text" class="form-control" id="transferAmountTrans" name="transferAmountTrans" />
+                                <input type="text" class="form-control" id="transferAmountTrans"
+                                    name="transferAmountTrans" />
                             </div>
                             <div class="mb-3 col-lg-4">
                                 <label for="ratioFee" class="form-label">% Fee</label>
-                                <input type="text" class="form-control" id="feeTrans" name="feeTrans" value="10" disabled />
+                                <input type="text" class="form-control" id="feeTrans" name="feeTrans" value="10"
+                                    disabled />
                             </div>
                             <div class="mb-3 col-lg-4">
                                 <label for="transactionAmount" class="form-label">Total Amount Of Transaction</label>
-                                <input type="text" class="form-control" id="transactionAmountTrans" name="transactionAmountTrans"  disabled/>
+                                <input type="text" class="form-control" id="transactionAmountTrans"
+                                    name="transactionAmountTrans" disabled />
                             </div>
                         </div>
 

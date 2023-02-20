@@ -1,0 +1,235 @@
+{
+  "customers": [
+    {
+      "id": 1,
+      "fullName": "Lysandra Bradley",
+      "email": "moqo@mailinator.com",
+      "phone": "0354698363",
+      "address": "Ut voluptates volupt",
+      "balance": 810,
+      "deleted": 0
+    },
+    {
+      "fullName": "Cairo Mayer",
+      "email": "runa@mailinator.com",
+      "phone": "+1 (682) 804-9996",
+      "address": "Rerum excepturi qui ",
+      "balance": 538,
+      "deleted": 0,
+      "id": 4,
+      "readyState": 1
+    },
+    {
+      "fullName": "Abbot Daugherty",
+      "email": "cososaz@mailinator.com",
+      "phone": "0347985147",
+      "address": "Mollit aut proident",
+      "balance": 631,
+      "deleted": 0,
+      "id": 5
+    },
+    {
+      "fullName": "NVB",
+      "email": "nvb@abc.vn",
+      "phone": "1234567",
+      "address": "USB",
+      "balance": 1100,
+      "deleted": 0,
+      "id": 6
+    },
+    {
+      "fullName": "NVAA",
+      "email": "nva@abc.vn",
+      "phone": "523525",
+      "address": "VN",
+      "balance": 38000,
+      "deleted": 0,
+      "id": 7
+    },
+    {
+      "fullName": "Adena Chandler",
+      "email": "pedab@mailinator.com",
+      "phone": "+1 (589) 857-3047",
+      "address": "Ipsum fugiat ullamc",
+      "balance": 10000,
+      "deleted": 0,
+      "id": 8
+    },
+    {
+      "fullName": "NVAA",
+      "email": "nva@abc.vn",
+      "phone": "523525",
+      "address": "VN",
+      "balance": 29900,
+      "deleted": 0,
+      "id": 9
+    },
+    {
+      "fullName": "NVAA",
+      "email": "nva@abc.vn",
+      "phone": "523525",
+      "address": "VN",
+      "balance": 28900,
+      "deleted": 0,
+      "id": 10
+    },
+    {
+      "fullName": "Tiger Barnes",
+      "email": "tifax@mailinator.com",
+      "phone": "+1 (919) 549-3124",
+      "address": "Nihil qui voluptatem",
+      "balance": 1008.8,
+      "deleted": 0,
+      "id": 11
+    },
+    {
+      "fullName": "Wendy Estes",
+      "email": "qixad@mailinator.com",
+      "phone": "+1 (884) 293-4379",
+      "address": "Quis laboris est est",
+      "balance": 190,
+      "deleted": 0,
+      "id": 12
+    },
+    {
+      "fullName": "Elton Horne",
+      "email": "sofa@mailinator.com",
+      "phone": "+1 (427) 472-8499",
+      "address": "Dolor quia corporis ",
+      "balance": 992,
+      "deleted": 0,
+      "id": 13
+    },
+    {
+      "fullName": "Lisandra Mayo",
+      "email": "litu@mailinator.com",
+      "phone": "+1 (837) 506-4082",
+      "address": "Tempore officia dol",
+      "balance": 0,
+      "deleted": 0,
+      "id": 14
+    },
+    {
+      "fullName": "Barclay Rosario",
+      "email": "vimes@mailinator.com",
+      "phone": "+1 (545) 223-6244",
+      "address": "Minim ut animi amet",
+      "balance": 0,
+      "deleted": 1,
+      "id": 15
+    }
+  ],
+  "withdraws": [],
+  "deposits": [
+    {
+      "customerId": 1,
+      "transactionAmount": 1000000000,
+      "id": 1
+    },
+    {
+      "customerId": 1,
+      "transactionAmount": 1000000000,
+      "id": 2
+    },
+    {
+      "customerId": 1,
+      "transactionAmount": 1000000000,
+      "id": 3
+    },
+    {
+      "customerId": 1,
+      "transactionAmount": 1000000000,
+      "id": 4
+    },
+    {
+      "customerId": 11,
+      "transactionAmount": 1000,
+      "id": 5
+    },
+    {
+      "customerId": 13,
+      "transactionAmount": 1000,
+      "id": 6
+    },
+    {
+      "customerId": 1,
+      "transactionAmount": 1000000000,
+      "id": 7
+    },
+    {
+      "customerId": 1,
+      "transactionAmount": 1000000000,
+      "id": 8
+    },
+    {
+      "customerId": 1,
+      "transactionAmount": 300002000,
+      "id": 9
+    }
+  ],
+  "transfers": [
+    {
+      "fees": 10,
+      "feesAmount": 10,
+      "transactionAmount": 110,
+      "transferAmount": 100,
+      "senderId": 1,
+      "recipientId": 1,
+      "id": 1
+    },
+    {
+      "fees": 10,
+      "feesAmount": 10,
+      "transactionAmount": 110,
+      "transferAmount": 100,
+      "senderId": 4,
+      "recipientId": 1,
+      "id": 2
+    },
+    {
+      "fees": 10,
+      "feesAmount": 10,
+      "transactionAmount": 110,
+      "transferAmount": 100,
+      "senderId": 11,
+      "recipientId": 12,
+      "id": 3
+    },
+    {
+      "fees": 10,
+      "feesAmount": 10,
+      "transactionAmount": 110,
+      "transferAmount": 100,
+      "senderId": 11,
+      "recipientId": 12,
+      "id": 4
+    },
+    {
+      "fees": 10,
+      "feesAmount": -0.8,
+      "transactionAmount": -8.8,
+      "transferAmount": -8,
+      "senderId": 11,
+      "recipientId": 13,
+      "id": 5
+    },
+    {
+      "fees": 10,
+      "feesAmount": 1,
+      "transactionAmount": 11,
+      "transferAmount": 10,
+      "senderId": 4,
+      "recipientId": 4,
+      "id": 6
+    },
+    {
+      "fees": 10,
+      "feesAmount": 10,
+      "transactionAmount": 110,
+      "transferAmount": 100,
+      "senderId": 1,
+      "recipientId": 10,
+      "id": 7
+    }
+  ]
+}

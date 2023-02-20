@@ -61,3 +61,11 @@ class Customer {
         this.deleted = deleted;
     }
 }
+
+class Deposit {
+    constructor(id, fullName, transactionAmount) {
+        this.id = id;
+        this.fullName = fullName;
+        this.transactionAmount = transactionAmount;
+    }
+}
